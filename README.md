@@ -1,5 +1,7 @@
 # todo_vue
-
+```
+ ToDoList is software in the category of Task Management, Project Management built using VueJs.
+```
 ## Project setup
 ```
 npm install
