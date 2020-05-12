@@ -1,25 +1,29 @@
 <template>
   <div>
-    <NavBar />
     <div id="app">
-      <link
-        rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
-      />
+      <md-icon class="logo list md-primary md-size-5x">list</md-icon>
 
-      <md-icon class="logo fa fa-list md-primary"></md-icon>
-
-      <div class="row">
-        <p
-          class="col-sm-6"
-        >Completed Tasks: {{todos.filter(todo => {return todo.completed === true}).length}}</p>
-        <p
-          class="col-sm-6"
-        >Pending Tasks: {{todos.filter(todo => {return todo.completed === false}).length}}</p>
+      <div class="md-layout">
+        <div class="md-layout-item">
+          <p
+            class="col-sm-6"
+          >Completed Tasks: {{todos.filter(todo => {return todo.completed === true}).length}}</p>
+        </div>
+        <div class="md-layout-item">
+          <p
+            class="col-sm-6"
+          >Pending Tasks: {{todos.filter(todo => {return todo.completed === false}).length}}</p>
+        </div>
       </div>
 
-      <to-do-list :todos="todos" @delete-todo="deleteTodo" @clear-todos="clearAllTodos" />
-      <AddToDo v-on:add-todo="addTodo" />
+      <AddToDo @add-todo="addTodo" />
+
+      <to-do-list
+        :todos="todos"
+        @delete-todo="deleteTodo"
+        @clear-todos="clearAllTodos"
+        @reorderTodos="reorderTodos"
+      />
     </div>
 
     <!-- <vue-content-loading :width="300" :height="100">
@@ -31,9 +35,8 @@
 </template>
 <script>
 import Vue from "vue";
-import NavBar from "./components/NavBar";
-import ToDoList from "./components/ToDoList";
-import AddToDo from "./components/AddToDo";
+import ToDoList from "./components/ToDoList/ToDoList.vue";
+import AddToDo from "./components/AddToDo/AddToDo.vue";
 import VueMaterial from "vue-material";
 Vue.use(VueMaterial);
 
@@ -41,7 +44,6 @@ export default {
   name: "App",
   components: {
     ToDoList,
-    NavBar,
     AddToDo
   },
   data() {
@@ -78,16 +80,28 @@ export default {
   },
   methods: {
     addTodo(newTodoObj) {
-      this.todos = [...this.todos, newTodoObj];
-      console.log(this.todos);
+      this.todos = [newTodoObj, ...this.todos];
+      this.reorderTodos();
     },
     deleteTodo(id) {
-      console.log("deleting todo");
       this.todos = this.todos.filter(todo => todo.id !== id);
     },
     clearAllTodos() {
       this.todos = [];
+    },
+    reorderTodos() {
+      this.todos.sort((a, b) => {
+        if (a.completed && !b.completed) {
+          return 1;
+        } else if (!a.completed && !b.completed) {
+          return 1;
+        }
+        return -1;
+      });
     }
+  },
+  mounted() {
+    this.reorderTodos();
   }
 };
 </script>
@@ -96,6 +110,7 @@ export default {
 @import "~vue-material/dist/theme/engine";
 .logo {
   // width: 600px;
+  height: 70px !important;
 }
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
