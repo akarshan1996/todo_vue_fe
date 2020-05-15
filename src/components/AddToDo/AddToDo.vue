@@ -4,6 +4,7 @@
 import { v4 as uuidv4 } from "uuid";
 export default {
   name: "AddToDo",
+  props: ["todos", "actions"],
   data() {
     return {
       title: ""
@@ -18,7 +19,7 @@ export default {
           title: e.target[0].value,
           completed: false
         };
-        this.$emit("add-todo", newToDo);
+        this.actions.addTodo(newToDo);
         e.target[0].value = "";
       }
     }

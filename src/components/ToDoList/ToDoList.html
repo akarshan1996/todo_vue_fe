@@ -7,20 +7,20 @@
 
         <md-card-content>
             <!-- <VclBulletList v-if="todos.length === 0" /> -->
-            <div class="no-todos" v-if="todos.length === 0">NO TODOS :(</div>
+            <div class="no-todos" v-if="todos.length === 0">NO TODOS :)</div>
             <md-list class="md-triple-line" v-else>
                 <li :key="todo.id" v-for="todo in todos">
                     <div class="md-list-item-text">
-                        <ToDoItem :todo="todo" @delete-todo="$emit('delete-todo', todo.id)"
-                            @reorderTodos="$emit('reorderTodos')" />
+                        <ToDoItem :todo="todo" :actions="actions" />
                     </div>
                 </li>
             </md-list>
         </md-card-content>
 
         <md-card-actions>
-            <md-button class="md-raised md-accent" @click="$emit('clear-todos')" :disabled="todos.length === 0">Clear
-                All</md-button>
+            <md-button class="md-raised md-accent" @click="clearAllTodos" :disabled="todos.length === 0">
+                Clear All
+            </md-button>
         </md-card-actions>
     </md-card>
 </div>

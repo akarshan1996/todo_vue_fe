@@ -1,14 +1,12 @@
 <template src='./ToDoItem.html'></template>
 
-
 <script>
 export default {
   name: "ToDoItem",
-  props: ["todo"],
+  props: ["todo", "actions"],
   methods: {
-    toggleCompletionStatus() {
-      this.todo.completed = !this.todo.completed;
-      this.$emit("reorderTodos");
+    toggleCompletionStatus(e, todoId) {
+      this.actions.toggleTodo(todoId);
     }
   }
 };

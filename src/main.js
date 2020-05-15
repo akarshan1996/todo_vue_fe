@@ -10,7 +10,7 @@ Vue.prototype.$appName = 'ToDo'
 
 new Vue({
   beforeCreate: function () {
-    console.log(this.$appName)
+    console.log('appName: ', this.$appName)
   },
   render: h => h(App),
 }).$mount('#app')
