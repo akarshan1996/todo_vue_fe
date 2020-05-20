@@ -10,7 +10,9 @@ export default {
   components: {
     ToDoItem
   },
-  mounted() {
+  created() {
+    console.log("inside created of todolist");
+    this.actions.getTodos();
     // let vm = this;
     // Vue.nextTick(function() {
     //   console.log(vm.actions, vm.todos);

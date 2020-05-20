@@ -6,6 +6,7 @@ export default {
   props: ["todo", "actions"],
   methods: {
     toggleCompletionStatus(e, todoId) {
+      console.log("inside togggle completion");
       this.actions.toggleTodo(todoId);
     }
   }

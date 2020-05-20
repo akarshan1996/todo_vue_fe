@@ -102,8 +102,9 @@ export default {
     // Vue.nextTick(function() {
     //   console.log(vm.actions, vm.todos);
     // });
-    // const actions = this.mapDispatchToProps();
-    // actions.reorderTodos();
+  },
+  created() {
+    // console.log("vm instance value", this);
   }
 };
 </script>
