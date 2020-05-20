@@ -101,7 +101,13 @@ export default {
     }
   },
   mounted() {
-    this.reorderTodos();
+    // let vm = this;
+    // Vue.nextTick(function() {
+    //   console.log(vm.actions, vm.todos);
+    // });
+  },
+  created() {
+    // console.log("vm instance value", this);
   }
 };
 </script>

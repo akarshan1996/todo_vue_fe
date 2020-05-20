@@ -9,7 +9,23 @@ export default {
   props: ["todos"],
   components: {
     ToDoItem
-    // VclBulletList
+  },
+  created() {
+    console.log("inside created of todolist");
+    this.actions.getTodos();
+    // let vm = this;
+    // Vue.nextTick(function() {
+    //   console.log(vm.actions, vm.todos);
+    // });
+  },
+  methods: {
+    clearAllTodos() {
+      let message = "Are you sure you want to delete all items?";
+      let result = window.confirm(message);
+      if (result) {
+        this.actions.clearAllTodos();
+      }
+    }
   }
 };
 </script>

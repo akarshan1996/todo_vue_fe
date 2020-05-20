@@ -6,9 +6,9 @@ export default {
   name: "ToDoItem",
   props: ["todo"],
   methods: {
-    toggleCompletionStatus() {
-      this.todo.completed = !this.todo.completed;
-      this.$emit("reorderTodos");
+    toggleCompletionStatus(e, todoId) {
+      console.log("inside togggle completion");
+      this.actions.toggleTodo(todoId);
     }
   }
 };
