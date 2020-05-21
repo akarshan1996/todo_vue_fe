@@ -6,20 +6,6 @@
   >
     <template #default="{ stateValues, actions }">
       <div id="app">
-        <md-icon class="logo list md-primary md-size-5x">list</md-icon>
-        <div class="md-layout">
-          <div class="md-layout-item">
-            <p
-              class="col-sm-6"
-            >Completed Tasks: {{stateValues.todos && stateValues.todos.length !== 0 ? stateValues.todos.filter(todo => {return todo.completed === true}).length: 0}}</p>
-          </div>
-          <div class="md-layout-item">
-            <p
-              class="col-sm-6"
-            >Pending Tasks: {{stateValues.todos && stateValues.todos.length !== 0 ? stateValues.todos.filter(todo => {return todo.completed === false}).length : 0}}</p>
-          </div>
-        </div>
-        <AddToDo :todos="stateValues.todos" :actions="actions" />
         <to-do-list :todos="stateValues.todos" :actions="actions" />
 
         <div>
@@ -28,7 +14,7 @@
             <!-- <template v-slot:default="{user}">{{ user.first }}</template> -->
             <!-- <template #default="slotProps">{{ slotProps}}</template> -->
 
-            <template #namedSlot="namedSlot">{{namedSlot.account.id}}</template>
+            <!-- <template #namedSlot="namedSlot">{{namedSlot.account.id}}</template> -->
           </navigation-link>
 
           <!-- <navigation-link v-slot:default="slotProps">{{ slotProps.user.first }}</navigation-link> -->
@@ -69,7 +55,6 @@ import { bindActionCreators } from "redux";
 import * as Actions from "./utils/action-creators";
 import store from "./utils/store";
 import ToDoList from "./components/ToDoList/ToDoList.vue";
-import AddToDo from "./components/AddToDo/AddToDo.vue";
 
 import navigationLink from "./components/navigationLink";
 
@@ -79,7 +64,6 @@ export default {
   name: "App",
   components: {
     ToDoList,
-    AddToDo,
     Provider,
     navigationLink
   },

@@ -15,7 +15,7 @@ export const getTodos = () => {
     axios
       .get(`${backend_url}/todos`)
       .then(({ data }) => {
-        dispatch({ type: "GET_TODOS", payload: data });
+        dispatch({ type: GET_TODOS, payload: data });
       })
       .catch((err) =>
         console.error(`Network Error Occured while getting todos: ${err}`)
@@ -56,7 +56,7 @@ export function deleteTodo(id) {
     axios
       .delete(`${backend_url}/todo/${id}`)
       .then((res) => {
-        dispatch({ type: DELETE_TODO, payload: id });
+        dispatch({ type: DELETE_TODO, payload: { id } });
       })
       .catch((err) =>
         console.error(`Network Error Occured while deleting todo: ${err}`)

@@ -1,16 +1,17 @@
 <template>
   <div>
     <a href="url" class="nav-link">
-      <slot user="Akarshan Gupta">"Fallback text here""</slot>
-      <slot :user="user">{{ user.fallback }}</slot>
+      <!-- <slot user="Akarshan Gupta">"Fallback text here""</slot> -->
+      <!-- <slot :user="user">{{ user.fallback }}</slot> -->
       <br />
-      <slot name="namedSlot" :account="account">{{ user.fallback }}</slot>
+      <!-- <slot name="namedSlot" :account="account">{{ user.fallback }}</slot> -->
       <!-- <slot name="header" :user="user"></slot>-->
       <!-- <slot name="footer"></slot> -->
       <!-- Default slot -->
       <!-- <slot></slot> -->
     </a>
-    <button @click="hello">Print Prop</button>
+
+    <!-- <button @click="hello">Print Prop</button> -->
   </div>
 </template>
 

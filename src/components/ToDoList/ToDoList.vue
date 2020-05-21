@@ -3,15 +3,33 @@
 <script>
 // import Vue from "vue";
 import ToDoItem from "../ToDoItem/ToDoItem.vue";
+import AddToDo from "../AddToDo/AddToDo.vue";
+import moment from "moment";
 
 export default {
   name: "ToDoList",
+  data() {
+    return {
+      daysInWeek: [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      day: moment().format("dddd"),
+      todayDay: moment().format("Do MMMM YYYY")
+    };
+  },
   props: ["todos", "actions"],
   components: {
-    ToDoItem
+    ToDoItem,
+    AddToDo
   },
   created() {
-    console.log("inside created of todolist");
+    console.log("Fetched todo list");
     this.actions.getTodos();
     // let vm = this;
     // Vue.nextTick(function() {

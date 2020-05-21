@@ -1,13 +1,16 @@
-<template src='./ToDoItem.html'></template>
+<template src='./ToDoItem.html' ></template>
 
 <script>
 export default {
   name: "ToDoItem",
   props: ["todo", "actions"],
   methods: {
-    toggleCompletionStatus(e, todoId) {
-      console.log("inside togggle completion");
+    toggleCompletionStatus: function(todoId) {
       this.actions.toggleTodo(todoId);
+    },
+    deleteTodo: function(event, todoId) {
+      event.preventDefault();
+      this.actions.deleteTodo(todoId);
     }
   }
 };

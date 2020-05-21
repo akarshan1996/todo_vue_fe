@@ -1,11 +1,15 @@
 <div>
     <md-card>
         <md-card-header>
-            <div class="md-title">My ToDo List</div>
-            <div class="md-subhead">Things To Do</div>
+            <div class="md-title">{{day}}</div>
+            <div class="md-subhead">{{todayDay}}</div>
         </md-card-header>
 
+
         <md-card-content>
+            <div>
+                <AddToDo :todos="todos" :actions="actions" />
+            </div>
             <!-- <VclBulletList v-if="todos.length === 0" /> -->
             <div class="no-todos" v-if="todos.length === 0">NO TODOS :)</div>
             <md-list class="md-triple-line" v-else>

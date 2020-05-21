@@ -12,7 +12,7 @@ Vue.config.productionTip = false;
 Vue.prototype.$appName = "ToDo";
 
 new Vue({
-  beforeCreate: function() {
+  beforeCreate: function () {
     console.log("appName: ", this.$appName);
   },
   render: (h) => h(App),
