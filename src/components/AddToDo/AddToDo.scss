@@ -1,7 +1,17 @@
 .add-todo {
     // width: 500px;
     // width: 45%;
-    margin: 4px;
+    // margin: 4px;
     display: inline-block;
     vertical-align: top;
+}
+.add-btn{
+    margin-top: 12px !important;
+
+}
+.md-icon.add-icon {
+    width: 38px;
+    min-width: 48px;
+    height: 48px;
+    font-size: 33px!important;
 }

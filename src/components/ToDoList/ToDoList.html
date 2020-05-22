@@ -4,20 +4,16 @@
             <div class="md-title">{{day}}</div>
             <div class="md-subhead">{{todayDay}}</div>
         </md-card-header>
-
-
         <md-card-content>
             <div>
                 <AddToDo :todos="todos" :actions="actions" />
             </div>
             <!-- <VclBulletList v-if="todos.length === 0" /> -->
             <div class="no-todos" v-if="todos.length === 0">NO TODOS :)</div>
-            <md-list class="md-triple-line" v-else>
-                <li :key="todo.id" v-for="todo in todos">
-                    <div class="md-list-item-text">
-                        <ToDoItem :todo="todo" :actions="actions" />
-                    </div>
-                </li>
+            <md-list v-else>
+                <!-- <div class="md-list-item-text"> -->
+                <ToDoItem :key="todo.id" :todo="todo" :actions="actions" v-for="todo in todos" />
+                <!-- </div> -->
             </md-list>
         </md-card-content>
 

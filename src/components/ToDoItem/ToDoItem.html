@@ -1,14 +1,11 @@
-<div class="todo-item md-layout">
-  <md-list-item>
-    <md-button class="md-primary" @click="toggleCompletionStatus(todo.id)">
-      <md-icon class="md-primary" v-if="!todo.completed">check_box_outline_blank</md-icon>
-      <md-icon class="md-primary" v-else>check_box</md-icon>
-    </md-button>
-    <md-content :class="{ 'completed': todo.completed }">{{todo.title}}</md-content>
+<md-list-item>
+  <md-button class="md-primary md-icon-button" @click="toggleCompletionStatus(todo.id)">
+    <md-icon class="md-primary" v-if="!todo.completed">check_box_outline_blank</md-icon>
+    <md-icon class="md-primary" v-else>check_box</md-icon>
+  </md-button>
+  <md-content :class="{ 'completed': todo.completed }">{{todo.title}}</md-content>
 
-    <md-button class="md-icon-button" @click="deleteTodo($event, todo.id)">
-      <md-icon class="md-primary">delete</md-icon>
-    </md-button>
-  </md-list-item>
-  <md-divider class="md-inset"></md-divider>
-</div>
+  <md-button class="md-icon-button" @click="deleteTodo($event, todo.id)">
+    <md-icon class="md-accent">delete</md-icon>
+  </md-button>
+</md-list-item>
