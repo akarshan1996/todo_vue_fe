@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AddToDo has a add button 1`] = `
+<div>
+  <form>
+    <div
+      class="md-layout add-todo"
+    >
+      <div
+        class="md-layout-item"
+      >
+        <md-field
+          md-clearable=""
+        >
+          <label>
+            e.g. Feed your cat
+          </label>
+           
+          <md-input
+            autocomplete="off"
+            name="newTodo"
+            type="text"
+          />
+        </md-field>
+      </div>
+       
+      <md-button
+        class="md-icon-button add-btn"
+        type="submit"
+      >
+        <md-icon
+          class="md-primary"
+        >
+          add
+        </md-icon>
+      </md-button>
+    </div>
+  </form>
+</div>
+`;

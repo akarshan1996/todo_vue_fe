@@ -10,15 +10,6 @@ export default {
   name: "ToDoList",
   data() {
     return {
-      daysInWeek: [
-        "Sunday",
-        "Monday",
-        "Tuesday",
-        "Wednesday",
-        "Thursday",
-        "Friday",
-        "Saturday"
-      ],
       day: moment().format("dddd"),
       todayDay: moment().format("Do MMMM YYYY")
     };
@@ -31,6 +22,7 @@ export default {
   created() {
     console.log("Fetched todo list");
     this.actions.getTodos();
+
     // let vm = this;
     // Vue.nextTick(function() {
     //   console.log(vm.actions, vm.todos);

@@ -1,0 +1,826 @@
+{
+	"id": "12e6565b-7f74-48d5-9219-951424ebc7e4",
+	"name": "Todo App Sinatra",
+	"timestamp": "2020-05-22T10:50:24.316Z",
+	"collection_id": "3c740087-6fa2-4584-a3f2-f33cd4f01ead",
+	"folder_id": 0,
+	"environment_id": "0",
+	"totalPass": 170,
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "65ebe3c4-7533-4713-8a0a-e5487e789a65",
+			"name": "Make new Todo when id not present",
+			"time": 1053,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request "
+			},
+			"tests": {
+				"Status test": true,
+				"error contains message - id field is not present": true,
+				"body contains the todo value equals empty object": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"error contains message - id field is not present": {
+					"pass": 5,
+					"fail": 0
+				},
+				"body contains the todo value equals empty object": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				947,
+				904,
+				986,
+				916,
+				1053
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"error contains message - id field is not present": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - id field is not present": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - id field is not present": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - id field is not present": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - id field is not present": true,
+					"body contains the todo value equals empty object": true
+				}
+			]
+		},
+		{
+			"id": "3a0cc543-2b72-4c0a-961b-e142cc4798e9",
+			"name": "Make new Todo when completed field not present",
+			"time": 1050,
+			"responseCode": {
+				"code": 201,
+				"name": "Created "
+			},
+			"tests": {
+				"Status test": true,
+				"Body contains Todo saved": true,
+				"body contains the todo id submitted in request's body": true,
+				"body contains the todo title submitted in request's body": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Body contains Todo saved": {
+					"pass": 5,
+					"fail": 0
+				},
+				"body contains the todo id submitted in request's body": {
+					"pass": 5,
+					"fail": 0
+				},
+				"body contains the todo title submitted in request's body": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				914,
+				924,
+				977,
+				909,
+				1050
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"Body contains Todo saved": true,
+					"body contains the todo id submitted in request's body": true,
+					"body contains the todo title submitted in request's body": true
+				},
+				{
+					"Status test": true,
+					"Body contains Todo saved": true,
+					"body contains the todo id submitted in request's body": true,
+					"body contains the todo title submitted in request's body": true
+				},
+				{
+					"Status test": true,
+					"Body contains Todo saved": true,
+					"body contains the todo id submitted in request's body": true,
+					"body contains the todo title submitted in request's body": true
+				},
+				{
+					"Status test": true,
+					"Body contains Todo saved": true,
+					"body contains the todo id submitted in request's body": true,
+					"body contains the todo title submitted in request's body": true
+				},
+				{
+					"Status test": true,
+					"Body contains Todo saved": true,
+					"body contains the todo id submitted in request's body": true,
+					"body contains the todo title submitted in request's body": true
+				}
+			]
+		},
+		{
+			"id": "4d62b04c-4c5d-4b95-b5ff-75b543344a23",
+			"name": "Make new Todo when title not present",
+			"time": 1218,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request "
+			},
+			"tests": {
+				"Status test": true,
+				"error contains message - title field is not present": true,
+				"body contains the todo value equals empty object": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"error contains message - title field is not present": {
+					"pass": 5,
+					"fail": 0
+				},
+				"body contains the todo value equals empty object": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				887,
+				917,
+				976,
+				980,
+				1218
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"error contains message - title field is not present": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - title field is not present": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - title field is not present": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - title field is not present": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - title field is not present": true,
+					"body contains the todo value equals empty object": true
+				}
+			]
+		},
+		{
+			"id": "89698429-0342-40c1-a8a5-a3059a577028",
+			"name": "Make new Todo when title field is invalid",
+			"time": 1115,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request "
+			},
+			"tests": {
+				"Status test": true,
+				"error contains message - title is of int type": true,
+				"body contains the todo value equals empty object": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"error contains message - title is of int type": {
+					"pass": 5,
+					"fail": 0
+				},
+				"body contains the todo value equals empty object": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				898,
+				915,
+				987,
+				952,
+				1115
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"error contains message - title is of int type": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - title is of int type": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - title is of int type": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - title is of int type": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - title is of int type": true,
+					"body contains the todo value equals empty object": true
+				}
+			]
+		},
+		{
+			"id": "d05524f1-b315-45e6-a638-2867e236584e",
+			"name": "Make new Todo when completed field in invalid",
+			"time": 1072,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request "
+			},
+			"tests": {
+				"Status test": true,
+				"error contains message - completed is of int type": true,
+				"body contains the todo value equals empty object": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"error contains message - completed is of int type": {
+					"pass": 5,
+					"fail": 0
+				},
+				"body contains the todo value equals empty object": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				894,
+				886,
+				963,
+				952,
+				1072
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"error contains message - completed is of int type": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - completed is of int type": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - completed is of int type": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - completed is of int type": true,
+					"body contains the todo value equals empty object": true
+				},
+				{
+					"Status test": true,
+					"error contains message - completed is of int type": true,
+					"body contains the todo value equals empty object": true
+				}
+			]
+		},
+		{
+			"id": "39498b11-f537-4390-8470-03a7e0db4444",
+			"name": "Random endpoint to test",
+			"time": 971,
+			"responseCode": {
+				"code": 404,
+				"name": "Not Found "
+			},
+			"tests": {
+				"Status test": true,
+				"error contains message - Endpoint not defined": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"error contains message - Endpoint not defined": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				876,
+				959,
+				940,
+				944,
+				971
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"error contains message - Endpoint not defined": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Endpoint not defined": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Endpoint not defined": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Endpoint not defined": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Endpoint not defined": true
+				}
+			]
+		},
+		{
+			"id": "e7d3ae8b-5f4d-435d-b298-8be0041fba2d",
+			"name": "Change completion status of  non-existent todo",
+			"time": 1383,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request "
+			},
+			"tests": {
+				"Status test": true,
+				"error contains message - Could not find Todo with key": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"error contains message - Could not find Todo with key": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				878,
+				998,
+				906,
+				1018,
+				1383
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"error contains message - Could not find Todo with key": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Could not find Todo with key": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Could not find Todo with key": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Could not find Todo with key": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Could not find Todo with key": true
+				}
+			]
+		},
+		{
+			"id": "3b5b6d8a-6a51-4695-83f4-dd612182daed",
+			"name": "Delete a non-existent todo",
+			"time": 1265,
+			"responseCode": {
+				"code": 400,
+				"name": "Bad Request "
+			},
+			"tests": {
+				"Status test": true,
+				"error contains message - Could not find Todo with key": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"error contains message - Could not find Todo with key": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				876,
+				953,
+				908,
+				1021,
+				1265
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"error contains message - Could not find Todo with key": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Could not find Todo with key": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Could not find Todo with key": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Could not find Todo with key": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Could not find Todo with key": true
+				}
+			]
+		},
+		{
+			"id": "47d6f8f7-bef4-4bc3-81e6-fae292210283",
+			"name": "Make new Todo",
+			"time": 934,
+			"responseCode": {
+				"code": 201,
+				"name": "Created "
+			},
+			"tests": {
+				"Status test": true,
+				"Body contains Todo saved": true,
+				"body contains the todo id submitted in request's body": true,
+				"body contains the todo title submitted in request's body": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"Body contains Todo saved": {
+					"pass": 5,
+					"fail": 0
+				},
+				"body contains the todo id submitted in request's body": {
+					"pass": 5,
+					"fail": 0
+				},
+				"body contains the todo title submitted in request's body": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				899,
+				970,
+				904,
+				939,
+				934
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"Body contains Todo saved": true,
+					"body contains the todo id submitted in request's body": true,
+					"body contains the todo title submitted in request's body": true
+				},
+				{
+					"Status test": true,
+					"Body contains Todo saved": true,
+					"body contains the todo id submitted in request's body": true,
+					"body contains the todo title submitted in request's body": true
+				},
+				{
+					"Status test": true,
+					"Body contains Todo saved": true,
+					"body contains the todo id submitted in request's body": true,
+					"body contains the todo title submitted in request's body": true
+				},
+				{
+					"Status test": true,
+					"Body contains Todo saved": true,
+					"body contains the todo id submitted in request's body": true,
+					"body contains the todo title submitted in request's body": true
+				},
+				{
+					"Status test": true,
+					"Body contains Todo saved": true,
+					"body contains the todo id submitted in request's body": true,
+					"body contains the todo title submitted in request's body": true
+				}
+			]
+		},
+		{
+			"id": "c5417980-fde7-4c33-8835-4680a4238592",
+			"name": "Get all todos",
+			"time": 1225,
+			"responseCode": {
+				"code": 200,
+				"name": "OK "
+			},
+			"tests": {
+				"Status test": true,
+				"body contains some todo objects": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"body contains some todo objects": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				940,
+				1011,
+				917,
+				951,
+				1225
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"body contains some todo objects": true
+				},
+				{
+					"Status test": true,
+					"body contains some todo objects": true
+				},
+				{
+					"Status test": true,
+					"body contains some todo objects": true
+				},
+				{
+					"Status test": true,
+					"body contains some todo objects": true
+				},
+				{
+					"Status test": true,
+					"body contains some todo objects": true
+				}
+			]
+		},
+		{
+			"id": "42c3b243-c6d5-42f1-8299-5133a7b138f9",
+			"name": "Change status of todo completion",
+			"time": 1245,
+			"responseCode": {
+				"code": 200,
+				"name": "OK "
+			},
+			"tests": {
+				"Status test": true,
+				"error contains message - Todo completion status changed": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"error contains message - Todo completion status changed": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				939,
+				1043,
+				938,
+				965,
+				1245
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"error contains message - Todo completion status changed": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Todo completion status changed": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Todo completion status changed": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Todo completion status changed": true
+				},
+				{
+					"Status test": true,
+					"error contains message - Todo completion status changed": true
+				}
+			]
+		},
+		{
+			"id": "c469d7e2-9b55-475d-a334-e64d456deeda",
+			"name": "Delete a todo",
+			"time": 1193,
+			"responseCode": {
+				"code": 200,
+				"name": "OK "
+			},
+			"tests": {
+				"Status test": true,
+				"message key contains value - Todo deleted": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"message key contains value - Todo deleted": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				929,
+				1023,
+				935,
+				1032,
+				1193
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"message key contains value - Todo deleted": true
+				},
+				{
+					"Status test": true,
+					"message key contains value - Todo deleted": true
+				},
+				{
+					"Status test": true,
+					"message key contains value - Todo deleted": true
+				},
+				{
+					"Status test": true,
+					"message key contains value - Todo deleted": true
+				},
+				{
+					"Status test": true,
+					"message key contains value - Todo deleted": true
+				}
+			]
+		},
+		{
+			"id": "efce45e7-6b91-407e-9ceb-1dbb14ccdb74",
+			"name": "Delete all todos",
+			"time": 1128,
+			"responseCode": {
+				"code": 200,
+				"name": "OK "
+			},
+			"tests": {
+				"Status test": true,
+				"message key contains value - Todos deleted": true
+			},
+			"testPassFailCounts": {
+				"Status test": {
+					"pass": 5,
+					"fail": 0
+				},
+				"message key contains value - Todos deleted": {
+					"pass": 5,
+					"fail": 0
+				}
+			},
+			"times": [
+				880,
+				1009,
+				932,
+				1002,
+				1128
+			],
+			"allTests": [
+				{
+					"Status test": true,
+					"message key contains value - Todos deleted": true
+				},
+				{
+					"Status test": true,
+					"message key contains value - Todos deleted": true
+				},
+				{
+					"Status test": true,
+					"message key contains value - Todos deleted": true
+				},
+				{
+					"Status test": true,
+					"message key contains value - Todos deleted": true
+				},
+				{
+					"Status test": true,
+					"message key contains value - Todos deleted": true
+				}
+			]
+		}
+	],
+	"count": 5,
+	"totalTime": 63971,
+	"collection": {
+		"requests": [
+			{
+				"id": "65ebe3c4-7533-4713-8a0a-e5487e789a65",
+				"method": "POST"
+			},
+			{
+				"id": "3a0cc543-2b72-4c0a-961b-e142cc4798e9",
+				"method": "POST"
+			},
+			{
+				"id": "4d62b04c-4c5d-4b95-b5ff-75b543344a23",
+				"method": "POST"
+			},
+			{
+				"id": "89698429-0342-40c1-a8a5-a3059a577028",
+				"method": "POST"
+			},
+			{
+				"id": "d05524f1-b315-45e6-a638-2867e236584e",
+				"method": "POST"
+			},
+			{
+				"id": "39498b11-f537-4390-8470-03a7e0db4444",
+				"method": "GET"
+			},
+			{
+				"id": "e7d3ae8b-5f4d-435d-b298-8be0041fba2d",
+				"method": "PUT"
+			},
+			{
+				"id": "3b5b6d8a-6a51-4695-83f4-dd612182daed",
+				"method": "DELETE"
+			},
+			{
+				"id": "47d6f8f7-bef4-4bc3-81e6-fae292210283",
+				"method": "POST"
+			},
+			{
+				"id": "c5417980-fde7-4c33-8835-4680a4238592",
+				"method": "GET"
+			},
+			{
+				"id": "42c3b243-c6d5-42f1-8299-5133a7b138f9",
+				"method": "PUT"
+			},
+			{
+				"id": "c469d7e2-9b55-475d-a334-e64d456deeda",
+				"method": "DELETE"
+			},
+			{
+				"id": "efce45e7-6b91-407e-9ceb-1dbb14ccdb74",
+				"method": "DELETE"
+			}
+		]
+	}
+}

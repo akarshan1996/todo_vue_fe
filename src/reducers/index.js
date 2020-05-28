@@ -1,4 +1,3 @@
-import comparer from "../utils/helperfunctions";
 import {
   ADD_TODO,
   DELETE_TODO,
@@ -38,7 +37,7 @@ const initialState = {
 };
 
 export function todosReducer(state = { todos: [] }, action) {
-  // console.log(action.payload);
+  console.log(action.payload);
   switch (action.type) {
     case GET_TODOS:
       return { todos: [...action.payload] };
@@ -61,8 +60,6 @@ export function todosReducer(state = { todos: [] }, action) {
       };
     case CLEAR_ALL_TODOS:
       return { todos: [] };
-    case REORDER_TODO:
-      return state.todos.sort(comparer);
     default:
       return state;
   }

@@ -4,9 +4,9 @@
     :mapStateToProps="mapStateToProps"
     :store="store"
   >
-    <template #default="{ stateValues, actions }">
+    <template #default="{ todos, actions }">
       <div id="app">
-        <to-do-list :todos="stateValues.todos" :actions="actions" />
+        <to-do-list :todos="todos" :actions="actions" />
       </div>
     </template>
   </Provider>
@@ -21,8 +21,7 @@ import { bindActionCreators } from "redux";
 import * as Actions from "./utils/action-creators";
 import store from "./utils/store";
 import ToDoList from "./components/ToDoList/ToDoList.vue";
-
-import navigationLink from "./components/navigationLink";
+import { getSortedTodosSelector } from "./utils/selectors";
 
 Vue.use(VueMaterial);
 
@@ -30,8 +29,7 @@ export default {
   name: "App",
   components: {
     ToDoList,
-    Provider,
-    navigationLink
+    Provider
   },
   data() {
     return {
@@ -41,7 +39,7 @@ export default {
   },
   methods: {
     mapStateToProps(state) {
-      return { stateValues: state };
+      return { todos: getSortedTodosSelector(state) };
     },
     mapDispatchToProps(dispatch) {
       return { actions: bindActionCreators(Actions, dispatch) };
