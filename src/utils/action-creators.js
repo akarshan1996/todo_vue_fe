@@ -3,16 +3,14 @@ import {
   ADD_TODO,
   DELETE_TODO,
   CLEAR_ALL_TODOS,
-  REORDER_TODO,
   TOGGLE_TODO,
   GET_TODOS,
 } from "./app.constants";
-
 import axios from "axios";
 
-export const getTodos = () => {
-  return (dispatch) => {
-    axios
+export function getTodos() {
+  return (dispatch, ) => {
+    return axios
       .get(`${backend_url}/todos`)
       .then(({ data }) => {
         dispatch({ type: GET_TODOS, payload: data });
@@ -21,13 +19,13 @@ export const getTodos = () => {
         console.error(`Network Error Occured while getting todos: ${err}`)
       );
   };
-};
+}
 
 export function toggleTodo(id) {
-  return (dispatch) => {
-    axios
+  return (dispatch, ) => {
+    return axios
       .put(`${backend_url}/todo/${id}/completed`)
-      .then((res) => {
+      .then(() => {
         dispatch({ type: TOGGLE_TODO, payload: { id } });
       })
       .catch((err) =>
@@ -39,23 +37,26 @@ export function toggleTodo(id) {
 }
 
 export function addTodo(data) {
-  return (dispatch) => {
-    axios
+  return async (dispatch, ) => {
+    return axios
       .post(`${backend_url}/todo/new`, { todo: data })
       .then(({ data: { todo } }) => {
+        console.log('inside add todo', todo)
         dispatch({ type: ADD_TODO, payload: todo });
+        return data;
       })
-      .catch((err) =>
+      .catch((err) => {
         console.error(`Network Error Occured while adding todo: ${err}`)
-      );
-  };
+        return err;
+      })
+  }
 }
 
 export function deleteTodo(id) {
-  return (dispatch) => {
-    axios
+  return (dispatch, ) => {
+    return axios
       .delete(`${backend_url}/todo/${id}`)
-      .then((res) => {
+      .then(() => {
         dispatch({ type: DELETE_TODO, payload: { id } });
       })
       .catch((err) =>
@@ -65,18 +66,14 @@ export function deleteTodo(id) {
 }
 
 export function clearAllTodos() {
-  return (dispatch) => {
-    axios
+  return (dispatch, ) => {
+    return axios
       .delete(`${backend_url}/delete/all`)
-      .then((res) => {
+      .then(() => {
         dispatch({ type: CLEAR_ALL_TODOS });
       })
       .catch((err) =>
         console.error(`Network Error Occured while clearing all todos: ${err}`)
       );
   };
-}
-
-export function reorderTodos() {
-  return { type: REORDER_TODO };
 }

@@ -5,9 +5,6 @@ import App from "./App.vue";
 import "vue-material/dist/vue-material.css";
 import "vue-material/dist/theme/default.css";
 
-if (process.env.NODE_ENV === "development") {
-}
-
 Vue.config.productionTip = false;
 Vue.prototype.$appName = "ToDo";
 

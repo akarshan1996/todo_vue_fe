@@ -2,39 +2,39 @@ import {
   ADD_TODO,
   DELETE_TODO,
   CLEAR_ALL_TODOS,
-  REORDER_TODO,
   TOGGLE_TODO,
   GET_TODOS,
 } from "../utils/app.constants";
-const initialState = {
-  todos: [
-    {
-      id: 1,
-      title: "Go workout",
-      completed: true,
-    },
-    {
-      id: 2,
-      title: "Do laundry",
-      completed: false,
-    },
-    {
-      id: 3,
-      title: "Cook food",
-      completed: false,
-    },
-    {
-      id: 4,
-      title: "Clean up room",
-      completed: true,
-    },
-    {
-      id: 5,
-      title: "Finish work",
-      completed: false,
-    },
-  ],
-};
+
+// const initialState = {
+//   todos: [
+//     {
+//       id: 1,
+//       title: "Go workout",
+//       completed: true,
+//     },
+//     {
+//       id: 2,
+//       title: "Do laundry",
+//       completed: false,
+//     },
+//     {
+//       id: 3,
+//       title: "Cook food",
+//       completed: false,
+//     },
+//     {
+//       id: 4,
+//       title: "Clean up room",
+//       completed: true,
+//     },
+//     {
+//       id: 5,
+//       title: "Finish work",
+//       completed: false,
+//     },
+//   ],
+// };
 
 export function todosReducer(state = { todos: [] }, action) {
   console.log(action.payload);
